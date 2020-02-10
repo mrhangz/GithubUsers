@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BFA41BEB23F15BC50098BF85 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA41BEA23F15BC50098BF85 /* APIManager.swift */; };
+		BFA41BF023F165BC0098BF85 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA41BEF23F165BC0098BF85 /* User.swift */; };
+		BFA41BF423F1A5C40098BF85 /* UserTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA41BF323F1A5C40098BF85 /* UserTableViewModel.swift */; };
 		BFCD8F0E23F0185000391072 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD8F0D23F0185000391072 /* AppDelegate.swift */; };
-		BFCD8F1223F0185000391072 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD8F1123F0185000391072 /* ViewController.swift */; };
+		BFCD8F1223F0185000391072 /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCD8F1123F0185000391072 /* UserTableViewController.swift */; };
 		BFCD8F1523F0185000391072 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFCD8F1323F0185000391072 /* Main.storyboard */; };
 		BFCD8F1723F0185400391072 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFCD8F1623F0185400391072 /* Assets.xcassets */; };
 		BFCD8F1A23F0185400391072 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFCD8F1823F0185400391072 /* LaunchScreen.storyboard */; };
@@ -26,9 +29,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BFA41BEA23F15BC50098BF85 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		BFA41BEF23F165BC0098BF85 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BFA41BF323F1A5C40098BF85 /* UserTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewModel.swift; sourceTree = "<group>"; };
 		BFCD8F0A23F0185000391072 /* GithubUsers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubUsers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFCD8F0D23F0185000391072 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BFCD8F1123F0185000391072 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BFCD8F1123F0185000391072 /* UserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
 		BFCD8F1423F0185000391072 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BFCD8F1623F0185400391072 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFCD8F1923F0185400391072 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,6 +62,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BFA41BE923F15BB70098BF85 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BFA41BEA23F15BC50098BF85 /* APIManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		BFA41BEE23F165B40098BF85 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BFA41BEF23F165BC0098BF85 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BFA41BF123F1A54D0098BF85 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BFCD8F1123F0185000391072 /* UserTableViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		BFA41BF223F1A5AC0098BF85 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BFA41BF323F1A5C40098BF85 /* UserTableViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		BFCD8F0123F0185000391072 = {
 			isa = PBXGroup;
 			children = (
@@ -77,8 +115,11 @@
 		BFCD8F0C23F0185000391072 /* GithubUsers */ = {
 			isa = PBXGroup;
 			children = (
+				BFA41BF223F1A5AC0098BF85 /* ViewModels */,
+				BFA41BF123F1A54D0098BF85 /* ViewControllers */,
+				BFA41BEE23F165B40098BF85 /* Models */,
+				BFA41BE923F15BB70098BF85 /* Services */,
 				BFCD8F0D23F0185000391072 /* AppDelegate.swift */,
-				BFCD8F1123F0185000391072 /* ViewController.swift */,
 				BFCD8F1323F0185000391072 /* Main.storyboard */,
 				BFCD8F1623F0185400391072 /* Assets.xcassets */,
 				BFCD8F1823F0185400391072 /* LaunchScreen.storyboard */,
@@ -197,7 +238,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFCD8F1223F0185000391072 /* ViewController.swift in Sources */,
+				BFA41BF023F165BC0098BF85 /* User.swift in Sources */,
+				BFA41BF423F1A5C40098BF85 /* UserTableViewModel.swift in Sources */,
+				BFA41BEB23F15BC50098BF85 /* APIManager.swift in Sources */,
+				BFCD8F1223F0185000391072 /* UserTableViewController.swift in Sources */,
 				BFCD8F0E23F0185000391072 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
