@@ -13,6 +13,7 @@ class UserTableViewModel {
   private var apiManager: APIManagerProtocol
   private var isLoading = false
   var didUpdate: (() -> Void)?
+  var didFail: ((Error) -> Void)?
   private var users: [User] = [] {
     didSet {
       didUpdate?()
@@ -34,9 +35,21 @@ class UserTableViewModel {
       case .success(let users):
         self?.users.append(contentsOf: users)
       case .failure(let error):
-        print(error.localizedDescription)
+        self?.didFail?(error)
       }
       self?.isLoading = false
     }
+  }
+  
+  var userCount: Int {
+    return users.count
+  }
+  
+  func getUser(at index: Int) -> UserCellViewModel {
+    return UserCellViewModel(user: users[index])
+  }
+  
+  func urlForUser(at index: Int) -> String {
+    return users[index].htmlURL
   }
 }

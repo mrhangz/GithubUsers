@@ -12,6 +12,7 @@ import UIKit
 enum APIError: Error {
   case invalidRequest
   case invalidJSON
+  case serviceError
 }
 
 protocol APIManagerProtocol {
@@ -30,6 +31,7 @@ class APIManager {
       return
     }
     var request = URLRequest(url: url)
+    request.timeoutInterval = 10
     request.httpMethod = httpMethod
     let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
       if let _ = error {
@@ -42,7 +44,13 @@ class APIManager {
               completion(.success(values))
             }
           } catch {
-            completion(.failure(.invalidJSON))
+            DispatchQueue.main.async {
+              completion(.failure(.invalidJSON))
+            }
+          }
+        } else {
+          DispatchQueue.main.async {
+            completion(.failure(.serviceError))
           }
         }
       }

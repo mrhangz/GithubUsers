@@ -15,7 +15,6 @@ struct User: Codable {
   let htmlURL: String
   let type: String
   let siteAdmin: Bool
-  var isFavorite: Bool = false
   
   private enum CodingKeys: String, CodingKey {
     case login
@@ -24,9 +23,5 @@ struct User: Codable {
     case htmlURL = "html_url"
     case type
     case siteAdmin = "site_admin"
-  }
-  
-  mutating func setFavorite(isFavorite: Bool) {
-    self.isFavorite = isFavorite
   }
 }
